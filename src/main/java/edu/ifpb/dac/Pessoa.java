@@ -15,8 +15,7 @@ public class Pessoa {
 
     public Pessoa() {
     }
-
-    
+   
     public Pessoa(String nome) {
         this.nome = nome;
     }

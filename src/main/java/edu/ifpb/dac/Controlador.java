@@ -6,7 +6,9 @@
 package edu.ifpb.dac;
 
 
+import java.io.Serializable;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -14,12 +16,24 @@ import javax.inject.Named;
  * @author jederson
  */
 @Named
-@RequestScoped
-public class Controlador {
-            
+@SessionScoped
+public class Controlador implements Serializable{
+     
+    private Pessoa pessoa = new Pessoa();
+    
     public String redirect(){
            return "home.xhtml";
     }  
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+    
+    
     
     
 }
