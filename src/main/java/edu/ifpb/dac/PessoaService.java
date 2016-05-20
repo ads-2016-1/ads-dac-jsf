@@ -5,14 +5,25 @@
  */
 package edu.ifpb.dac;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  *
  * @author jederson
  */
 public class PessoaService {
 
-    void salvar(Pessoa pessoa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void salvar(Pessoa pessoa) {
+        
+    }
+    
+    public List<Pessoa> todos(){
+        List<Pessoa> pessoas = new ArrayList<>();
+        pessoas.add(new Pessoa("Raul Seixas"));
+        pessoas.add(new Pessoa("Bob Marley"));
+        return pessoas;
     }
     
 }

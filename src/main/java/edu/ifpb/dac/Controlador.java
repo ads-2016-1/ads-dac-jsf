@@ -7,8 +7,8 @@ package edu.ifpb.dac;
 
 
 import java.io.Serializable;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 /**
@@ -16,14 +16,21 @@ import javax.inject.Named;
  * @author jederson
  */
 @Named
-@SessionScoped
+@RequestScoped
+
 public class Controlador implements Serializable{
      
     private Pessoa pessoa = new Pessoa();
+    private PessoaService service = new PessoaService();
     
     public String redirect(){
            return "home.xhtml";
     }  
+    
+    public String salvar(){
+        service.salvar(pessoa);
+        return "home.xhtml";
+    }
 
     public Pessoa getPessoa() {
         return pessoa;
@@ -31,6 +38,10 @@ public class Controlador implements Serializable{
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+    
+    public List<Pessoa> todos(){
+        return service.todos();
     }
     
     
