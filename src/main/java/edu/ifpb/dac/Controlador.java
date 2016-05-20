@@ -5,7 +5,8 @@
  */
 package edu.ifpb.dac;
 
-import javax.faces.bean.RequestScoped;
+
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
@@ -15,24 +16,10 @@ import javax.inject.Named;
 @Named
 @RequestScoped
 public class Controlador {
-        
-    private Pessoa pessoa = new Pessoa();
-    private PessoaService service;
-    
-    public String salvar(){
-        //service.salvar(pessoa);
-        return "home.xhtml";
-    }
-
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
-
-    
+            
+    public String redirect(){
+           return "home.xhtml";
+    }  
     
     
 }
